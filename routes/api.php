@@ -13,6 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['cors']], function () {
+    Route::get('foo', function () {
+        return 'Hello World';
+    });
+
+    //广告轮播图
+    Route::get('ad/getById', 'API\ADController@getById');
+    Route::get('ad/getListByCon', 'API\ADController@getListByCon');
 });
+
+
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+////    return $request->user();
+//    return $request;
+//});
+
+//Route::get('/user', 'UsersController@index');
