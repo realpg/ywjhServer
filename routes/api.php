@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['cors']], function () {
     Route::get('foo', function () {
-        return 'Hello World';
+        return 'Hello World++++';
     });
 
     //广告轮播图
